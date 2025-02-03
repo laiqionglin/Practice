@@ -2,15 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.games.GamesFragment">
-
-   <GridView
-       android:id="@+id/grid_games"
-       android:layout_width="match_parent"
-       android:numColumns="3"
-       android:layout_height="match_parent"/>
-
+    tools:context=".ui.games.game.MineSweepingActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

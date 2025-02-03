@@ -3,4 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_games">Games</string>
     <string name="title_mine">Mine</string>
+    <string name="mine_sweeping">扫雷</string>
+    <string name="title_activity_mine_sweeping">MineSweeping</string>
 </resources>

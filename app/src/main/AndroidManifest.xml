@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Practice"
         tools:targetApi="31">
         <activity
+            android:name=".ui.games.game.MineSweepingActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
