@@ -1,5 +1,6 @@
 package com.yulin.practice.ui.games.mines;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
@@ -15,7 +16,6 @@ public class MineSweepingActivity extends AppCompatActivity implements ChooseFra
     private ActivityMineSweepingBinding binding;
 
     private FrameLayout mFrameLayout;
-    private FragmentTransaction mTransaction;
     private MineSweepingViewModel mViewModel;
 
     /**
@@ -32,9 +32,9 @@ public class MineSweepingActivity extends AppCompatActivity implements ChooseFra
         EdgeToEdge.enable(this);
         binding = ActivityMineSweepingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        // 锁定为纵向
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mFrameLayout = binding.sweepingFrameLayout;
-        mTransaction = getSupportFragmentManager().beginTransaction();
         mViewModel = new ViewModelProvider(this).get(MineSweepingViewModel.class);
         showChooseFragment();
     }
@@ -43,9 +43,10 @@ public class MineSweepingActivity extends AppCompatActivity implements ChooseFra
      * 显示选择界面
      */
     public void showChooseFragment() {
-        mTransaction.replace(mFrameLayout.getId(), new ChooseFragment());
-        mTransaction.commit();
         showActionBar();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(mFrameLayout.getId(), new ChooseFragment());
+        transaction.commit();
     }
 
     /**
@@ -55,9 +56,10 @@ public class MineSweepingActivity extends AppCompatActivity implements ChooseFra
      */
     public void showPlayFragment(int type) {
         mViewModel.setType(type);
-        mTransaction.replace(mFrameLayout.getId(), new ChooseFragment());
-        mTransaction.commit();
         hideActionBar();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(mFrameLayout.getId(), new PlayFragment());
+        transaction.commit();
     }
 
     /**
