@@ -1,6 +1,7 @@
 package com.yulin.practice.ui.games.mines;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -38,21 +39,22 @@ public class PlayFragment extends Fragment {
     }
 
     private void initPlayView() {
-        TableLayout mTableLayout = binding.playLayoutTable;
-//        mButtons = new Button[mViewModel.getRows()][mViewModel.getCols()];
+        TableLayout tableLayout = binding.playLayoutTable;
         for (int i = 0; i < mViewModel.getRows(); i++) {
             //创建一个新的tableRow
             TableRow tableRow = new TableRow(getContext());
             for (int j = 0; j < mViewModel.getCols(); j++) {
                 //创建一个button，并添加到表格
                 Button button = new Button(getContext());
+
+                button.setTextColor(Color.rgb(0,0,0));
                 button.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.selector_mines_button_close));
                 TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(100, 100);
                 if (j > 0) {
-                    layoutParams.leftMargin = 8;
+                    layoutParams.leftMargin = 6;
                 }
                 if (i > 0) {
-                    layoutParams.topMargin = 8;
+                    layoutParams.topMargin = 6;
                 }
                 button.setLayoutParams(layoutParams);
                 tableRow.addView(button);
@@ -74,7 +76,7 @@ public class PlayFragment extends Fragment {
                     //后续需更新点到雷的操作
                 });
             }
-            mTableLayout.addView(tableRow);
+            tableLayout.addView(tableRow);
         }
     }
 
@@ -86,6 +88,13 @@ public class PlayFragment extends Fragment {
         //显示附近雷数
         button.setText(String.valueOf(minePiece.getState()));
         button.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.mines_button_open));
+        if (minePiece.getState() == 0) {
+            button.setText("");
+        }else if (minePiece.getState() == -1) {
+            button.setText("");
+            button.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.ic_mine_bom_120dp));
+        }
+
     }
 
     private void openNear(int row, int col) {
