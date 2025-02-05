@@ -5,4 +5,7 @@
     <string name="title_mine">Mine</string>
     <string name="mine_sweeping">扫雷</string>
     <string name="title_activity_mine_sweeping">MineSweeping</string>
+    <string name="choose_easy">简单</string>
+    <string name="choose_middle">普通</string>
+    <string name="choose_hard">困难</string>
 </resources>

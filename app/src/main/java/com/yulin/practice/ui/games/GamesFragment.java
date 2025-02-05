@@ -9,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.yulin.practice.R;
 import com.yulin.practice.databinding.FragmentGamesBinding;
-import com.yulin.practice.ui.games.game.MineSweepingActivity;
+import com.yulin.practice.ui.games.mines.MineSweepingActivity;
 
 public class GamesFragment extends Fragment {
 
@@ -28,7 +27,7 @@ public class GamesFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GamesViewModel dashboardViewModel =
+        GamesViewModel gamesViewModel =
                 new ViewModelProvider(this).get(GamesViewModel.class);
 
         binding = FragmentGamesBinding.inflate(inflater, container, false);
@@ -70,11 +69,5 @@ public class GamesFragment extends Fragment {
             }
         });
         return binding.getRoot();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
     }
 }
