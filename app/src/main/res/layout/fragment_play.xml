@@ -23,15 +23,20 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="插旗" />
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            android:background="@color/mines_button_open"
+            android:src="@drawable/flag"
+             />
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/play_layout_play"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/play_layout_bottom"

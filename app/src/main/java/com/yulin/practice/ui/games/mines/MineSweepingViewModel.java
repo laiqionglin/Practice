@@ -31,12 +31,14 @@ public class MineSweepingViewModel extends ViewModel {
     private int cols;
     private int mines;
     private MinePiece[][] minePieces;
+    private boolean isFlag;
 
     public int getType() {
         return type;
     }
 
     public void setType(int type) {
+        isFlag = false;
         this.type = type;
         switch (type) {
             case 2:
@@ -149,5 +151,13 @@ public class MineSweepingViewModel extends ViewModel {
 
     public MinePiece getMinePiece(int row, int col) {
         return minePieces[row][col];
+    }
+
+    public boolean isFlag() {
+        return isFlag;
+    }
+
+    public void setFlag(boolean flag) {
+        isFlag = flag;
     }
 }

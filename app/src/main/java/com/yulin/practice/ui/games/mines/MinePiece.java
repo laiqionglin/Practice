@@ -1,11 +1,12 @@
 package com.yulin.practice.ui.games.mines;
 
+import android.view.View;
 import android.widget.Button;
 
 public class MinePiece {
     private int state;
     private boolean isOpen;
-    private Button button;
+    private View view;
     public MinePiece(){
         state=0;
         isOpen=false;
@@ -27,11 +28,11 @@ public class MinePiece {
         isOpen = open;
     }
 
-    public Button getButton() {
-        return button;
+    public View getView() {
+        return view;
     }
 
-    public void setButton(Button button) {
-        this.button = button;
+    public void setView(View view) {
+        this.view = view;
     }
 }
