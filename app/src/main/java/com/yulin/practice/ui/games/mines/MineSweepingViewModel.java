@@ -2,9 +2,7 @@ package com.yulin.practice.ui.games.mines;
 
 import androidx.lifecycle.ViewModel;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 public class MineSweepingViewModel extends ViewModel {
     // TODO: Implement the ViewModel
@@ -31,14 +29,14 @@ public class MineSweepingViewModel extends ViewModel {
     private int cols;
     private int mines;
     private MinePiece[][] minePieces;
-    private boolean isFlag;
+    private boolean isFlagType;
 
     public int getType() {
         return type;
     }
 
     public void setType(int type) {
-        isFlag = false;
+        isFlagType = false;
         this.type = type;
         switch (type) {
             case 2:
@@ -57,12 +55,8 @@ public class MineSweepingViewModel extends ViewModel {
                 mines = 10;
                 break;
         }
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                setMinePieces();
-            }
-        }).start();
+
+        setMinePieces();
     }
 
     private void setMinePieces() {
@@ -153,11 +147,11 @@ public class MineSweepingViewModel extends ViewModel {
         return minePieces[row][col];
     }
 
-    public boolean isFlag() {
-        return isFlag;
+    public boolean isFlagType() {
+        return isFlagType;
     }
 
-    public void setFlag(boolean flag) {
-        isFlag = flag;
+    public void setFlagType(boolean flagType) {
+        isFlagType = flagType;
     }
 }

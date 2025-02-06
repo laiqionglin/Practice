@@ -29,24 +29,31 @@
         <ImageButton
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:scaleType="centerInside"
             android:background="@color/mines_button_open"
-            android:src="@drawable/flag"
-             />
+            android:scaleType="centerInside"
+            android:src="@drawable/flag" />
     </LinearLayout>
 
-    <RelativeLayout
+    <ScrollView
         android:id="@+id/play_layout_play"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@id/play_layout_bottom"
-        android:layout_below="@id/play_layout_top">
+        android:layout_below="@id/play_layout_top"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:scrollbarSize="0dp">
 
-        <TableLayout
-            android:id="@+id/play_layout_table"
+        <HorizontalScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
-    </RelativeLayout>
+            android:scrollbarSize="0dp">
+
+            <TableLayout
+                android:id="@+id/play_layout_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </HorizontalScrollView>
+    </ScrollView>
 
 </RelativeLayout>

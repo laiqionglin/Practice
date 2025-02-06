@@ -7,6 +7,7 @@ public class MinePiece {
     private int state;
     private boolean isOpen;
     private View view;
+    private boolean isFlag;
     public MinePiece(){
         state=0;
         isOpen=false;
@@ -34,5 +35,13 @@ public class MinePiece {
 
     public void setView(View view) {
         this.view = view;
+    }
+
+    public boolean isFlag() {
+        return isFlag;
+    }
+
+    public void setFlag(boolean flag) {
+        isFlag = flag;
     }
 }
