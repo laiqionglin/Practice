@@ -1,5 +1,7 @@
 package com.yulin.practice.ui.games.mines;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.Random;
@@ -30,6 +32,19 @@ public class MineSweepingViewModel extends ViewModel {
     private int mines;
     private MinePiece[][] minePieces;
     private boolean isFlagType;
+    private long time;
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public void addTime() {
+        time++;
+    }
 
     public int getType() {
         return type;
@@ -38,6 +53,7 @@ public class MineSweepingViewModel extends ViewModel {
     public void setType(int type) {
         isFlagType = false;
         this.type = type;
+        time = 0;
         switch (type) {
             case 2:
                 rows = 35;
@@ -55,7 +71,6 @@ public class MineSweepingViewModel extends ViewModel {
                 mines = 10;
                 break;
         }
-
         setMinePieces();
     }
 

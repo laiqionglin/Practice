@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+    <path
+        android:fillColor="@color/mines_button_close"
+        android:pathData="m0,0h128v128h-128z"/>
+    <path
+        android:fillColor="#000"
+        android:name="矩形 1"
+        android:pathData="m31 95h66v12h-66v-12z" />
+    <path
+        android:fillColor="#000"
+        android:name="矩形 2"
+        android:pathData="m57 16h10v79h-10v-79z" />
+    <path
+        android:fillColor="#ff0000"
+        android:name="多边形 1"
+        android:pathData="m102.38 36.77 -35.86 20.7v-41.4l35.86 20.7z" />
+</vector>

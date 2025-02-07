@@ -10,29 +10,45 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/play_text_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/choose_middle" />
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:text="00:55" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/play_layout_bottom"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:background="#f0f0f0">
 
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@color/mines_button_open"
-            android:scaleType="centerInside"
-            android:src="@drawable/flag" />
-    </LinearLayout>
+        <Button
+            android:id="@+id/play_button_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:text="插旗模式" />
+
+        <TextView
+            android:id="@+id/play_text_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="#000000"
+            android:text="退出" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/play_layout_play"
